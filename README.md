@@ -1,1 +1,1 @@
-# devops-lab
+# DevOps Lab — Production-grade infrastructure project
