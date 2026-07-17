@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-helm
 spec:
-  replicas: { ? { .Values.replicaCount } }
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: hello-helm
@@ -13,14 +13,14 @@ spec:
         app: hello-helm
     spec:
       containers:
-      - name: hello-helm
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "20Mi"
-          limits:
-            cpu: "200m"
-            memory: "20Mi"
+        - name: hello-helm
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "20Mi"
+            limits:
+              cpu: "200m"
+              memory: "20Mi"
