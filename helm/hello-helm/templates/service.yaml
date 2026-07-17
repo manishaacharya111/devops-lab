@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-helm-service
+spec:
+  selector:
+    app: hello-helm
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 80

@@ -1,0 +1,5 @@
+apiVersion: v2
+name: hello-helm
+description: Throwaway chart for ApplicationSet Helm-source lab
+version: 0.1.0
+appVersion: "1.0"
